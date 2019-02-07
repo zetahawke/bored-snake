@@ -1,0 +1,39 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 700px;
+  height: 700px;
+  float: left;
+}
+
+.scorer {
+  padding: 10px;
+  float: left;
+}
+
+.empty {
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.snake,
+.apple,
+.wall {
+  background-color: black;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.apple {
+  background-color: red;
+}
