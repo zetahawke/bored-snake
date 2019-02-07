@@ -129,6 +129,7 @@ window.onload = function () {
 
 
   var moveSnake = function () {
+    clearInterval(interval);
     if (isGameOver) {
       return false;
     }
@@ -175,6 +176,7 @@ window.onload = function () {
       oldTaild.classList.add('empty');
       snake.splice(0 , 1);
     }
+    runInterval();
   };
 
   var loadScore = function () {
@@ -190,6 +192,7 @@ window.onload = function () {
   }
 
   var loadKeyListener = function () {
+
     window.onkeyup = function (e) {
       var key = e.keyCode ? e.keyCode : e.which;
 
