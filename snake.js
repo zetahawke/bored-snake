@@ -6,16 +6,35 @@ let isGameOver = false;
 window.onload = function () {
   console.log('loading script');
 
-  dificulty = 2;
+  dificulty = 3;
   container = document.getElementsByClassName('container')[0];
-  intervalTime = 200;
+  intervalTime = 200 / (dificulty * (dificulty / 2));
   score = 0.0;
 
   var cleanElementClasses = function(elem) {
-    elem.classList.remove('wall');
-    elem.classList.remove('snake');
-    elem.classList.remove('apple');
-    elem.classList.remove('empty');
+    var elemClasses = elem.classList.value.split(' ');
+
+    elemClasses.forEach(function(klss) {
+      elem.classList.remove(klss);
+    });
+  }
+
+  var randomImage = function() {
+    var imageNames = [
+      "bootic",
+      "chilexpress",
+      "correos",
+      "dafiti",
+      "dhl",
+      "jumpseller",
+      "linio",
+      "logo_shipit",
+      "muvsmart",
+      "prestashop",
+      "shopify",
+      "starken"
+    ];
+    return imageNames[Math.floor(Math.random() * imageNames.length)];
   }
 
   var createElementFromHTML = function (htmlString) {
@@ -98,6 +117,8 @@ window.onload = function () {
     var availableElements = document.getElementsByClassName('empty');
     var randElem = availableElements[Math.floor(Math.random() * availableElements.length)];
     randElem.classList.add('apple');
+    randElem.classList.add('img');
+    randElem.classList.add(randomImage());
   }
 
   var gameOver = function () {
@@ -118,7 +139,21 @@ window.onload = function () {
 
     var newHead = document.getElementById((parseInt(headHeightPos) + direction[0]) + '-' + (parseInt(headWidthPos) + direction[1]));
 
-    if (newHead.classList.contains('wall') || newHead.classList.contains('snake')) {
+    if (newHead.classList.contains('wall')) {
+      if(direction[0] == 0 && direction[1] == -1){
+        newHead = document.getElementById((parseInt(headHeightPos) + direction[0]) + '-' + (qvosW - 2));
+      }
+      if(direction[0] == 0 && direction[1] == 1){
+        newHead = document.getElementById((parseInt(headHeightPos) + direction[0]) + '-' + (1));
+      }
+      if(direction[0] == -1 && direction[1] == 0){
+        newHead = document.getElementById((qvosH - 2) + '-' + (parseInt(headWidthPos) + direction[1]));
+      }
+      if(direction[0] == 1 && direction[1] == 0){
+        newHead = document.getElementById((1) + '-' + (parseInt(headWidthPos) + direction[1]));
+      }
+    }
+    if (newHead.classList.contains('snake')) {
       gameOver();
     }
     if (newHead.classList.contains('apple')) {

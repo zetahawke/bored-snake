@@ -17,7 +17,7 @@ body {
 
 .empty {
   background-color: white;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   float: left;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -35,5 +35,58 @@ body {
 }
 
 .apple {
-  background-color: red;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.bootic {
+  background-image: url("assets/images/bootic.png");
+}
+.chilexpress {
+  background-image: url("assets/images/chilexpress.png");
+  
+}
+.correos {
+  background-image: url("assets/images/correos.png");
+  
+}
+.dafiti {
+  background-image: url("assets/images/dafiti.png");
+  
+}
+.dhl {
+  background-image: url("assets/images/dhl.png");
+  
+}
+.jumpseller {
+  background-image: url("assets/images/jumpseller.png");
+  
+}
+.linio {
+  background-image: url("assets/images/linio.png");
+  
+}
+.logo_shipit {
+  background-image: url("assets/images/logo_shipit.png");
+  
+}
+.muvsmart {
+  background-image: url("assets/images/muvsmart.png");
+  
+}
+.prestashop {
+  background-image: url("assets/images/prestashop.png");
+  
+}
+.shopify {
+  background-image: url("assets/images/shopify.png");
+  
+}
+.starken {
+  background-image: url("assets/images/starken.png");
 }
